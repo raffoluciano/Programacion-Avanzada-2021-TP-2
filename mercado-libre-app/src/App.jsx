@@ -1,19 +1,14 @@
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import DeleteIcon from '@mui/icons-material/Delete';
+import React from 'react'
+import Home from './pages/Home';
 
 
 function App() {
   return (
     <div >
-      <Container>
-
-         <Button  sx={{ m: 2 }} variant="contained">Contained</Button>
-         <DeleteIcon color="primary" />
-       
-      </Container>   
+      <Home/>
     </div>
   );
 }
 
 export default App;
+
