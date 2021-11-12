@@ -72,7 +72,7 @@ const ToolBar = () => {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         >
-                            Mercado Faso
+                            Mercado Libres
                         </Typography>
                         <Search>
                             <SearchIconWrapper>
