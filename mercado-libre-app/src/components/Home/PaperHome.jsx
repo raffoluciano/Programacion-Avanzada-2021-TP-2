@@ -53,7 +53,7 @@ const PaperHome = () => {
                        
                         <Grid item xs={9}>
                         <Box mt={2.5} >
-                        <div class="payment-data-title">Tarjeta de débito</div>
+                        <div className="payment-data-title">Tarjeta de débito</div>
                         
                         </Box>
                         </Grid>
@@ -74,7 +74,7 @@ const PaperHome = () => {
                        
                         <Grid item xs={9}>
                         <Box mt={2.5} >
-                        <div class="payment-data-title">Cuotas sin tarjeta</div>
+                        <div className="payment-data-title">Cuotas sin tarjeta</div>
                         </Box>
                         </Grid>
 
@@ -94,7 +94,7 @@ const PaperHome = () => {
                        
                         <Grid item xs={9}>
                         <Box mt={2.5} >
-                        <div class="payment-data-title">Efectivo</div>
+                        <div className="payment-data-title">Efectivo</div>
                         </Box>
                         </Grid>
 

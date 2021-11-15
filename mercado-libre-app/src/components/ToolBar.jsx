@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -51,7 +51,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const ToolBar = () => {
+const ToolBar = ({setSearchvalue}) => {
+
+    //{setSearchvalue}
+
+   const handleKeyPress = (event) => {
+        if(event.key === 'Enter'){
+          console.log('enter press here! ')
+          console.log('valor',event.target.value)
+          //cargar en el componente home el valor para realizar la busqueda
+          setSearchvalue(event.target.value)
+        }
+      }
+
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
@@ -74,7 +86,8 @@ const ToolBar = () => {
                         >
                             Mercado Libres
                         </Typography>
-                        <Search>
+                        <Search
+                        onKeyPress={handleKeyPress}>
                             <SearchIconWrapper>
                                 <SearchIcon />
                             </SearchIconWrapper>
