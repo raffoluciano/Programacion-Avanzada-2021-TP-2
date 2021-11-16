@@ -18,7 +18,7 @@ const Home = () => {
         <div>
             <ToolBar setSearchvalue={setSearchvalue}/>
             {searchvalue === '' ? 
-            <Container >
+            <Container style = {{height:"100vh"}} >
             
             <Grid  container spacing={2}>
                 <Grid item xs={4}>
@@ -50,8 +50,15 @@ const Home = () => {
             
             : 
             
-
-            <ListArticulos searchvalue={searchvalue} /> }         
+            <Container  >
+                <Box mt={2} >
+                <ListArticulos searchvalue={searchvalue} />
+                </Box>  
+                
+            </Container>
+            
+            
+            }         
             
         </div>
       
