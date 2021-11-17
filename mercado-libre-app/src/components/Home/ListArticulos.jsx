@@ -7,6 +7,9 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
+import {Link} from 'react-router-dom';
+import Details from '../../pages/Details';
+
 
 const imgStyle = {
   height: '200px',
@@ -18,7 +21,7 @@ const ListArticulos = ({ searchvalue }) => {
 
   useEffect(function () {
     getListArticulos(searchvalue, 10).then(articulos => setArticulos(articulos))
-  }, [])
+  }, [searchvalue])
 
   return (
     <div>
@@ -29,7 +32,9 @@ const ListArticulos = ({ searchvalue }) => {
             console.log('ver', articulos),
             articulos.map((articulo, index) => {
               return <React.Fragment key={index}>
-                <ListItem alignItems="flex-start">
+              
+                <Link to={`/details/${articulo.id}`}  style={{ textDecoration: 'none' }}>
+                <ListItem alignItems="flex-start" >
                   <ListItemAvatar>
                     <img
                       style={imgStyle}
@@ -41,7 +46,7 @@ const ListArticulos = ({ searchvalue }) => {
                   </ListItemAvatar>
                   <ListItemText
 
-                    primary="Brunch this weekend?"
+                    primary= {<Typography> $ {articulo.price} </Typography>}
                     secondary={
                       <React.Fragment>
                         <Typography
@@ -50,18 +55,20 @@ const ListArticulos = ({ searchvalue }) => {
                           variant="body2"
                           color="text.primary"
                         >
-                          Ali Connors
+                         {articulo.title} 
                         </Typography>
-                        Precio
                       </React.Fragment>
                     }
                   />
                 </ListItem>
+                </Link>
+                
+     
                 <Divider variant="inset" component="li" />
               </React.Fragment>
             })
           }
-        </List>
+        </List>       
       }
     </div>
   )
