@@ -53,8 +53,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const ToolBar = ({setSearchvalue}) => {
 
-    //{setSearchvalue}
-
    const handleKeyPress = (event) => {
         if(event.key === 'Enter'){
           console.log('enter press here! ')
